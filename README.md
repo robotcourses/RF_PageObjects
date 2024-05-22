@@ -3,6 +3,9 @@
 
 Nesse projeto, possuem duas suítes de testes: Uma utilizando somente o padrão Keyword Driven, utilizando keywords direto de suas bibliotecas, e outra usando o padrão **Page Objects**.
 
+![PageObjects](https://github.com/robotcourses/base_rf/assets/144608203/a76cefe6-3e68-47f0-9553-033b6e13d863)
+
+
 
 ## Instação do projeto
 
