@@ -1,0 +1,4 @@
+authentication:
+  inputEmail: //input[@id='email']
+  inputPassword: //input[@id='passwd']
+  submitLoginButton: //button[@id='SubmitLogin']

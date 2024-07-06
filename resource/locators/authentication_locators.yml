@@ -1,3 +1,0 @@
-input_email: //input[@id='email']
-input_password: //input[@id='passwd']
-btn_submit_login: //button[@id='SubmitLogin']

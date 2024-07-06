@@ -1,2 +1,0 @@
-cart_layer: //div[@id='layer_cart']//div[@class='clearfix']
-cart_layer_msg: //div[@id='layer_cart']//div[@class='clearfix']//span[@class='title']

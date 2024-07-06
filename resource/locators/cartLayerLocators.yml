@@ -1,0 +1,3 @@
+cart:
+  cartLayer: //div[@id='layer_cart']//div[@class='clearfix']
+  cartLayerMsg: //div[@id='layer_cart']//div[@class='clearfix']//span[@class='title']

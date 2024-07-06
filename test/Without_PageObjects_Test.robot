@@ -1,13 +1,12 @@
 *** Settings ***
 Test Tags  POM
 Library  SeleniumLibrary
-Resource   ../Resource/utils/open_browser.resource
-Variables  ../Resource/data/login_data.yml
-Variables  ../Resource/locators/home_locators.yml
-Variables  ../Resource/locators/authentication_locators.yml
-Variables  ../Resource/locators/product_details_locators.yml
-Variables  ../Resource/locators/my_account_locators.yml
-Variables  ../Resource/locators/cart_layer_locators.yml
+Resource   ../resource/utils/openBrowser.resource
+Variables  ../resource/locators/homeLocators.yml
+Variables  ../resource/locators/authenticationLocators.yml
+Variables  ../resource/locators/productDetailsLocators.yml
+Variables  ../resource/locators/myAccountLocators.yml
+Variables  ../resource/locators/cartLayerlocators.yml
 Test Setup  Abrir Browser
 Test Teardown  Close All Browsers
 
@@ -15,34 +14,35 @@ Test Teardown  Close All Browsers
 Realizar Compra
     
     ## Home - Clicando no Botão Sign In
-    Wait Until Element Is Visible  xpath=${btn_login}
-    Click Element  xpath=${btn_login}
+    Wait Until Element Is Visible  xpath=${home.loginButton}
+    Click Element  xpath=${home.loginButton}
 
     ## Authentication - Realizar Login
-    Wait Until Element Is Visible  xpath=${input_email}
-    Input Text  xpath=${input_email}  text=${username}
-    Wait Until Element Is Visible  xpath=${input_password}
-    Input Text  xpath=${input_password}  text=${passowrd}
-    Click Button  xpath=${btn_submit_login}
+    Wait Until Element Is Visible  xpath=${authentication.inputEmail}
+    Input Text  xpath=${authentication.inputEmail}  text=${USERNAME}
+    Wait Until Element Is Visible  xpath=${authentication.inputPassword}
+    Input Text  xpath=${authentication.inputPassword}  text=${PASSWORD}
+    Click Button  xpath=${authentication.submitLoginButton}
 
     ## My Account - Retornar para a Home
-    Wait Until Element Is Visible  xpath=${header_logo}
-    Click Element  xpath=${header_logo}
+    Wait Until Element Is Visible  xpath=${myAccount.headerLogo}
+    Click Element  xpath=${myAccount.headerLogo}
 
     #Home : Selecionar um produto
-    Wait Until Element Is Visible  xpath=${product}
-    Click Element  xpath=${product}
+    Scroll Element Into View    xpath=${home.products}
+    Wait Until Element Is Visible  xpath=${home.products}
+    Click Element  xpath=${home.products}
 
     ## Product Detail : Adicionar item ao carrinho
-    Wait Until Element Is Visible    xpath=${btn_product_quantity_up}
+    Wait Until Element Is Visible    xpath=${productDetails.productQuantityUpButton}
 
     FOR    ${counter}    IN RANGE    5
-        Click Element  xpath=${btn_product_quantity_up}
+        Click Element  xpath=${productDetails.productQuantityUpButton}
     END
 
-    Click Element  xpath=${btn_add_to_cart}
+    Click Element  xpath=${productDetails.addToCartButton}
 
     ## Cart Layer
-    Wait Until Element Is Visible  xpath=${cart_layer}
+    Wait Until Element Is Visible  xpath=${cart.cartLayer}
 
-    Element Should Contain  xpath=${cart_layer_msg}  expected=Product successfully added to your shopping cart
+    Element Should Contain  xpath=${cart.cartLayerMsg}  expected=Product successfully added to your shopping cart

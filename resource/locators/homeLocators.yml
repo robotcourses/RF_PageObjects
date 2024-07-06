@@ -1,0 +1,3 @@
+home:
+  loginButton: //a[contains(text(),'Sign in')]
+  products: //ul[@id='homefeatured']//a[@class='product-name' and @title='{product}']
